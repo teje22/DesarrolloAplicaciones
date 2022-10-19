@@ -4,6 +4,8 @@
  */
 package dto;
 
+import java.util.Date;
+
 /**
  *
  * @author PabloTejedorRivadull
@@ -12,10 +14,13 @@ public class Usuario {
     
     private String nombre;
     private String rol;
+    private Date fecha;
 
-    public Usuario(String nombre, String rol) {
+
+    public Usuario(String nombre, String rol, Date fecha) {
         this.nombre = nombre;
         this.rol = rol;
+        this.fecha = fecha;
     }
 
     public String getNombre() {
@@ -34,6 +39,12 @@ public class Usuario {
         this.rol = rol;
     }
     
-    
+    public Date getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(Date fecha) {
+        this.fecha = fecha;
+    }
     
 }

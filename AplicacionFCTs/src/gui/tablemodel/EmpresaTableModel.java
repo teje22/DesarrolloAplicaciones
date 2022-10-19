@@ -4,7 +4,7 @@
  */
 package gui.tablemodel;
 
-import dto.Usuario;
+import dto.Empresa;
 import java.util.List;
 import javax.swing.table.AbstractTableModel;
 
@@ -12,20 +12,18 @@ import javax.swing.table.AbstractTableModel;
  *
  * @author PabloTejedorRivadull
  */
-public class UsuariosTableModel extends AbstractTableModel {
-    
-    private List<Usuario> listUsuario;
-    private String[] columnas = {"Nombre", "Rol", "Fecha"};
-    
-    public UsuariosTableModel(List<Usuario> listUsuario){
-        this.listUsuario = listUsuario;
+public class EmpresaTableModel extends AbstractTableModel {
+    private List<Empresa> listEmpresa;
+    private String[] columnas = {"Empresa", "Nombre de contacto", "Número de contacto"};
+
+    public EmpresaTableModel(List<Empresa> listEmpresa) {
+        this.listEmpresa = listEmpresa;
     }
-    
-    
+
     @Override
     public int getRowCount() 
     {
-        return listUsuario.size();
+        return listEmpresa.size();
     }
 
     @Override
@@ -40,21 +38,20 @@ public class UsuariosTableModel extends AbstractTableModel {
         switch (columnIndex)
         {
             case 0: 
-                return listUsuario.get(rowIndex).getNombre();
+                return listEmpresa.get(rowIndex).getNombre();
             case 1:
-                return listUsuario.get(rowIndex).getRol();
+                return listEmpresa.get(rowIndex).getContacto();
             case 2:
-                return listUsuario.get(rowIndex).getFecha();
+                return listEmpresa.get(rowIndex).getNumero_tlf();
         }
         return null;
     }
-
+    
     @Override
     public String getColumnName(int column) 
     {
         return columnas[column];
     }
-    
     
     
 }

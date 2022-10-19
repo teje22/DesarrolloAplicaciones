@@ -5,7 +5,7 @@
 package gui;
 
 import gui.tablemodel.UsuariosTableModel;
-import logica.LogicaNegocio;
+import logica.ListaUsuarios;
 
 /**
  *
@@ -14,7 +14,7 @@ import logica.LogicaNegocio;
 public class TablaUsuarios extends javax.swing.JDialog {
     
     private PantallaPrincipal pantallaPrincipal;
-    private LogicaNegocio logicaNegocio = new LogicaNegocio();
+    private ListaUsuarios listaUsuarios = new ListaUsuarios();
 
     /**
      * Creates new form TablaUsuarios
@@ -22,7 +22,7 @@ public class TablaUsuarios extends javax.swing.JDialog {
     public TablaUsuarios(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
-        jTableUsuarios.setModel(new UsuariosTableModel(logicaNegocio.getListaUsuarios()));
+        jTableUsuarios.setModel(new UsuariosTableModel(listaUsuarios.getListaUsuarios()));
     }
 
     /**

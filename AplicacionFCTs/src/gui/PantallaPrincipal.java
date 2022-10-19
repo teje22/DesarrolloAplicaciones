@@ -4,9 +4,6 @@
  */
 package gui;
 
-import gui.tablemodel.UsuariosTableModel;
-import logica.LogicaNegocio;
-import dto.Usuario;
 
 /**
  *
@@ -14,7 +11,7 @@ import dto.Usuario;
  */
 public class PantallaPrincipal extends javax.swing.JFrame {
 
-    private LogicaNegocio logicaNegocio = new LogicaNegocio();
+   // private LogicaNegocio logicaNegocio = new LogicaNegocio();
     /**
      * Creates new form PantallaPrincipal
      */
