@@ -10,14 +10,14 @@ import java.util.Date;
  *
  * @author PabloTejedorRivadull
  */
-public class Usuario {
+public class Alumno {
     
     private String nombre;
     private String rol;
     private Date fecha;
 
 
-    public Usuario(String nombre, String rol, Date fecha) {
+    public Alumno(String nombre, String rol, Date fecha) {
         this.nombre = nombre;
         this.rol = rol;
         this.fecha = fecha;

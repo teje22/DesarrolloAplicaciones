@@ -4,25 +4,25 @@
  */
 package gui;
 
-import gui.tablemodel.UsuariosTableModel;
-import logica.ListaUsuarios;
+import gui.tablemodel.AlumnosTableModel;
+import logica.ListaAlumnos;
 
 /**
  *
  * @author PabloTejedorRivadull
  */
-public class TablaUsuarios extends javax.swing.JDialog {
+public class TablaAlumnos extends javax.swing.JDialog {
     
     private PantallaPrincipal pantallaPrincipal;
-    private ListaUsuarios listaUsuarios = new ListaUsuarios();
+    private ListaAlumnos listaUsuarios = new ListaAlumnos();
 
     /**
      * Creates new form TablaUsuarios
      */
-    public TablaUsuarios(java.awt.Frame parent, boolean modal) {
-        super(parent, modal);
+    public TablaAlumnos(java.awt.Frame parent, boolean modal) {
+        super(parent, false);
         initComponents();
-        jTableUsuarios.setModel(new UsuariosTableModel(listaUsuarios.getListaUsuarios()));
+        jTableUsuarios.setModel(new AlumnosTableModel(listaUsuarios.getListaUsuarios()));
     }
 
     /**
@@ -37,6 +37,9 @@ public class TablaUsuarios extends javax.swing.JDialog {
         jScrollPaneTableUsuarios = new javax.swing.JScrollPane();
         jTableUsuarios = new javax.swing.JTable();
         jButtonVolver = new javax.swing.JButton();
+        jMenuBarInicio = new javax.swing.JMenuBar();
+        jMenuInicio = new javax.swing.JMenu();
+        jMenuEmpesas = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -60,25 +63,33 @@ public class TablaUsuarios extends javax.swing.JDialog {
             }
         });
 
+        jMenuInicio.setText("Inicio");
+        jMenuBarInicio.add(jMenuInicio);
+
+        jMenuEmpesas.setText("Empresas");
+        jMenuBarInicio.add(jMenuEmpesas);
+
+        setJMenuBar(jMenuBarInicio);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(80, Short.MAX_VALUE)
-                .addComponent(jScrollPaneTableUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(102, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(468, Short.MAX_VALUE)
                 .addComponent(jButtonVolver)
                 .addGap(26, 26, 26))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(73, 73, 73)
+                .addComponent(jScrollPaneTableUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(55, 55, 55)
+                .addGap(85, 85, 85)
                 .addComponent(jScrollPaneTableUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 180, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 127, Short.MAX_VALUE)
                 .addComponent(jButtonVolver)
                 .addGap(39, 39, 39))
         );
@@ -97,6 +108,9 @@ public class TablaUsuarios extends javax.swing.JDialog {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonVolver;
+    private javax.swing.JMenuBar jMenuBarInicio;
+    private javax.swing.JMenu jMenuEmpesas;
+    private javax.swing.JMenu jMenuInicio;
     private javax.swing.JScrollPane jScrollPaneTableUsuarios;
     private javax.swing.JTable jTableUsuarios;
     // End of variables declaration//GEN-END:variables
