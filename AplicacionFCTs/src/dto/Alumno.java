@@ -13,14 +13,19 @@ import java.util.Date;
 public class Alumno {
     
     private String nombre;
-    private String rol;
-    private Date fecha;
+    private String apellidos;
+    private String dni;
+    private Date fechaIni;
+    private Date fechaFin;
+    private String curso;
 
-
-    public Alumno(String nombre, String rol, Date fecha) {
+    public Alumno(String nombre, String apellidos, String dni, Date fechaIni, Date fechaFin, String curso) {
         this.nombre = nombre;
-        this.rol = rol;
-        this.fecha = fecha;
+        this.apellidos = apellidos;
+        this.dni = dni;
+        this.fechaIni = fechaIni;
+        this.fechaFin = fechaFin;
+        this.curso = curso;
     }
 
     public String getNombre() {
@@ -31,20 +36,44 @@ public class Alumno {
         this.nombre = nombre;
     }
 
-    public String getRol() {
-        return rol;
+    public String getApellidos() {
+        return apellidos;
     }
 
-    public void setRol(String rol) {
-        this.rol = rol;
-    }
-    
-    public Date getFecha() {
-        return fecha;
+    public void setApellidos(String apellidos) {
+        this.apellidos = apellidos;
     }
 
-    public void setFecha(Date fecha) {
-        this.fecha = fecha;
+    public String getDni() {
+        return dni;
+    }
+
+    public void setDni(String dni) {
+        this.dni = dni;
+    }
+
+    public Date getFechaIni() {
+        return fechaIni;
+    }
+
+    public void setFechaIni(Date fechaIni) {
+        this.fechaIni = fechaIni;
+    }
+
+    public Date getFechaFin() {
+        return fechaFin;
+    }
+
+    public void setFechaFin(Date fechaFin) {
+        this.fechaFin = fechaFin;
+    }
+
+    public String getCurso() {
+        return curso;
+    }
+
+    public void setCurso(String curso) {
+        this.curso = curso;
     }
     
 }

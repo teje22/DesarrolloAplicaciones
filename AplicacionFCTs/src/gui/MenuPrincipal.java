@@ -4,6 +4,8 @@
  */
 package gui;
 
+import javax.swing.text.TabableView;
+
 
 /**
  *
@@ -12,7 +14,7 @@ package gui;
 public class MenuPrincipal extends javax.swing.JDialog {
 
     /**
-     * Creates new form MenúPrincipal
+     * Creates new form MenÃºPrincipal
      */
     private PantallaPrincipal pantallaPrincipal;
     
@@ -30,19 +32,20 @@ public class MenuPrincipal extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanelAlumnos = new javax.swing.JPanel();
-        jScrollPaneAlumno = new javax.swing.JScrollPane();
-        jTableAlumnos = new javax.swing.JTable();
-        jPanelEmpresa = new javax.swing.JPanel();
-        jScrollPaneEmpresa = new javax.swing.JScrollPane();
-        jTableEmpresas = new javax.swing.JTable();
+        jScrollPaneAlumnos_Empresas = new javax.swing.JScrollPane();
+        jTableAlumnos_Empresas = new javax.swing.JTable();
         jMenuBarInicio = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenu2 = new javax.swing.JMenu();
+        jMenuPrincipal = new javax.swing.JMenu();
+        jMenuAlumnos = new javax.swing.JMenu();
+        jMenuItemTablaAlum = new javax.swing.JMenuItem();
+        jMenuItemFormAlum = new javax.swing.JMenuItem();
+        jMenuEmpresa = new javax.swing.JMenu();
+        jMenuItemTablaEmp = new javax.swing.JMenuItem();
+        jMenuItemFormEmp = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        jTableAlumnos.setModel(new javax.swing.table.DefaultTableModel(
+        jTableAlumnos_Empresas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -53,60 +56,51 @@ public class MenuPrincipal extends javax.swing.JDialog {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPaneAlumno.setViewportView(jTableAlumnos);
+        jScrollPaneAlumnos_Empresas.setViewportView(jTableAlumnos_Empresas);
 
-        javax.swing.GroupLayout jPanelAlumnosLayout = new javax.swing.GroupLayout(jPanelAlumnos);
-        jPanelAlumnos.setLayout(jPanelAlumnosLayout);
-        jPanelAlumnosLayout.setHorizontalGroup(
-            jPanelAlumnosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelAlumnosLayout.createSequentialGroup()
-                .addContainerGap(128, Short.MAX_VALUE)
-                .addComponent(jScrollPaneAlumno, javax.swing.GroupLayout.PREFERRED_SIZE, 365, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(122, Short.MAX_VALUE))
-        );
-        jPanelAlumnosLayout.setVerticalGroup(
-            jPanelAlumnosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelAlumnosLayout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addComponent(jScrollPaneAlumno, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(23, 23, 23))
-        );
+        jMenuPrincipal.setText("Menú");
 
-        jTableEmpresas.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+        jMenuAlumnos.setText("Alumnos");
+
+        jMenuItemTablaAlum.setText("Tabla de Alumnos");
+        jMenuItemTablaAlum.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemTablaAlumActionPerformed(evt);
             }
-        ));
-        jScrollPaneEmpresa.setViewportView(jTableEmpresas);
+        });
+        jMenuAlumnos.add(jMenuItemTablaAlum);
 
-        javax.swing.GroupLayout jPanelEmpresaLayout = new javax.swing.GroupLayout(jPanelEmpresa);
-        jPanelEmpresa.setLayout(jPanelEmpresaLayout);
-        jPanelEmpresaLayout.setHorizontalGroup(
-            jPanelEmpresaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelEmpresaLayout.createSequentialGroup()
-                .addContainerGap(126, Short.MAX_VALUE)
-                .addComponent(jScrollPaneEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, 367, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(122, Short.MAX_VALUE))
-        );
-        jPanelEmpresaLayout.setVerticalGroup(
-            jPanelEmpresaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelEmpresaLayout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(jScrollPaneEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27))
-        );
+        jMenuItemFormAlum.setText("Formulario de Alumnos");
+        jMenuItemFormAlum.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemFormAlumActionPerformed(evt);
+            }
+        });
+        jMenuAlumnos.add(jMenuItemFormAlum);
 
-        jMenu1.setText("Inicio");
-        jMenuBarInicio.add(jMenu1);
+        jMenuPrincipal.add(jMenuAlumnos);
 
-        jMenu2.setText("Edit");
-        jMenuBarInicio.add(jMenu2);
+        jMenuEmpresa.setText("Empresas");
+
+        jMenuItemTablaEmp.setText("Tabla de Empresas");
+        jMenuItemTablaEmp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemTablaEmpActionPerformed(evt);
+            }
+        });
+        jMenuEmpresa.add(jMenuItemTablaEmp);
+
+        jMenuItemFormEmp.setText("Formulario Empresas");
+        jMenuItemFormEmp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemFormEmpActionPerformed(evt);
+            }
+        });
+        jMenuEmpresa.add(jMenuItemFormEmp);
+
+        jMenuPrincipal.add(jMenuEmpresa);
+
+        jMenuBarInicio.add(jMenuPrincipal);
 
         setJMenuBar(jMenuBarInicio);
 
@@ -115,27 +109,40 @@ public class MenuPrincipal extends javax.swing.JDialog {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap(30, Short.MAX_VALUE)
-                        .addComponent(jPanelAlumnos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jPanelEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(97, Short.MAX_VALUE))
+                .addContainerGap(114, Short.MAX_VALUE)
+                .addComponent(jScrollPaneAlumnos_Empresas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(158, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanelAlumnos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jPanelEmpresa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30))
+                .addGap(30, 30, 30)
+                .addComponent(jScrollPaneAlumnos_Empresas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(46, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jMenuItemTablaAlumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemTablaAlumActionPerformed
+        TablaAlumnos tablaAlumnos = new TablaAlumnos(pantallaPrincipal, true);
+        tablaAlumnos.setVisible(true);
+    }//GEN-LAST:event_jMenuItemTablaAlumActionPerformed
+
+    private void jMenuItemFormAlumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemFormAlumActionPerformed
+        FormularioAlumnos formularioAlum = new FormularioAlumnos(pantallaPrincipal, true);
+        formularioAlum.setVisible(true);
+    }//GEN-LAST:event_jMenuItemFormAlumActionPerformed
+
+    private void jMenuItemTablaEmpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemTablaEmpActionPerformed
+        TablaEmpresas tablaEmpresas = new TablaEmpresas(pantallaPrincipal, true);
+        tablaEmpresas.setVisible(true);
+    }//GEN-LAST:event_jMenuItemTablaEmpActionPerformed
+
+    private void jMenuItemFormEmpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemFormEmpActionPerformed
+        FormularioEmpresas formularioEmp = new FormularioEmpresas(pantallaPrincipal, true);
+        formularioEmp.setVisible(true);
+    }//GEN-LAST:event_jMenuItemFormEmpActionPerformed
 
     /**
      * @param args the command line arguments
@@ -143,14 +150,15 @@ public class MenuPrincipal extends javax.swing.JDialog {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenuAlumnos;
     private javax.swing.JMenuBar jMenuBarInicio;
-    private javax.swing.JPanel jPanelAlumnos;
-    private javax.swing.JPanel jPanelEmpresa;
-    private javax.swing.JScrollPane jScrollPaneAlumno;
-    private javax.swing.JScrollPane jScrollPaneEmpresa;
-    private javax.swing.JTable jTableAlumnos;
-    private javax.swing.JTable jTableEmpresas;
+    private javax.swing.JMenu jMenuEmpresa;
+    private javax.swing.JMenuItem jMenuItemFormAlum;
+    private javax.swing.JMenuItem jMenuItemFormEmp;
+    private javax.swing.JMenuItem jMenuItemTablaAlum;
+    private javax.swing.JMenuItem jMenuItemTablaEmp;
+    private javax.swing.JMenu jMenuPrincipal;
+    private javax.swing.JScrollPane jScrollPaneAlumnos_Empresas;
+    private javax.swing.JTable jTableAlumnos_Empresas;
     // End of variables declaration//GEN-END:variables
 }

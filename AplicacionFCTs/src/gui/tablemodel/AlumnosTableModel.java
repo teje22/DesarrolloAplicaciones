@@ -42,9 +42,9 @@ public class AlumnosTableModel extends AbstractTableModel {
             case 0: 
                 return listAlumno.get(rowIndex).getNombre();
             case 1:
-                return listAlumno.get(rowIndex).getRol();
+                return listAlumno.get(rowIndex).getApellidos();
             case 2:
-                return listAlumno.get(rowIndex).getFecha();
+                return listAlumno.get(rowIndex).getFechaIni();
         }
         return null;
     }

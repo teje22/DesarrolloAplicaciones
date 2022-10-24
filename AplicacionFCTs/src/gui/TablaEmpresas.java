@@ -13,6 +13,8 @@ public class TablaEmpresas extends javax.swing.JDialog {
     /**
      * Creates new form TablaEmpresas
      */
+    private PantallaPrincipal pantallaPrincipal;
+    
     public TablaEmpresas(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
@@ -27,7 +29,62 @@ public class TablaEmpresas extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jMenuBarInicio = new javax.swing.JMenuBar();
+        jMenuPrincipal = new javax.swing.JMenu();
+        jMenuAlumnos = new javax.swing.JMenu();
+        jMenuItemTablaAlum = new javax.swing.JMenuItem();
+        jMenuItemFormAlum = new javax.swing.JMenuItem();
+        jMenuEmpresa = new javax.swing.JMenu();
+        jMenuItemTablaEmp = new javax.swing.JMenuItem();
+        jMenuItemFormEmp = new javax.swing.JMenuItem();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+
+        jMenuPrincipal.setText("Menú");
+
+        jMenuAlumnos.setText("Alumnos");
+
+        jMenuItemTablaAlum.setText("Tabla de Alumnos");
+        jMenuItemTablaAlum.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemTablaAlumActionPerformed(evt);
+            }
+        });
+        jMenuAlumnos.add(jMenuItemTablaAlum);
+
+        jMenuItemFormAlum.setText("Formulario de Alumnos");
+        jMenuItemFormAlum.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemFormAlumActionPerformed(evt);
+            }
+        });
+        jMenuAlumnos.add(jMenuItemFormAlum);
+
+        jMenuPrincipal.add(jMenuAlumnos);
+
+        jMenuEmpresa.setText("Empresas");
+
+        jMenuItemTablaEmp.setText("Tabla de Empresas");
+        jMenuItemTablaEmp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemTablaEmpActionPerformed(evt);
+            }
+        });
+        jMenuEmpresa.add(jMenuItemTablaEmp);
+
+        jMenuItemFormEmp.setText("Formulario Empresas");
+        jMenuItemFormEmp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemFormEmpActionPerformed(evt);
+            }
+        });
+        jMenuEmpresa.add(jMenuItemFormEmp);
+
+        jMenuPrincipal.add(jMenuEmpresa);
+
+        jMenuBarInicio.add(jMenuPrincipal);
+
+        setJMenuBar(jMenuBarInicio);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -37,11 +94,31 @@ public class TablaEmpresas extends javax.swing.JDialog {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGap(0, 280, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jMenuItemTablaAlumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemTablaAlumActionPerformed
+        TablaAlumnos tablaAlumnos = new TablaAlumnos(pantallaPrincipal, true);
+        tablaAlumnos.setVisible(true);
+    }//GEN-LAST:event_jMenuItemTablaAlumActionPerformed
+
+    private void jMenuItemFormAlumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemFormAlumActionPerformed
+        FormularioAlumnos formularioAlum = new FormularioAlumnos(pantallaPrincipal, true);
+        formularioAlum.setVisible(true);
+    }//GEN-LAST:event_jMenuItemFormAlumActionPerformed
+
+    private void jMenuItemTablaEmpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemTablaEmpActionPerformed
+        TablaEmpresas tablaEmpresas = new TablaEmpresas(pantallaPrincipal, true);
+        tablaEmpresas.setVisible(true);
+    }//GEN-LAST:event_jMenuItemTablaEmpActionPerformed
+
+    private void jMenuItemFormEmpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemFormEmpActionPerformed
+        FormularioEmpresas formularioEmp = new FormularioEmpresas(pantallaPrincipal, true);
+        formularioEmp.setVisible(true);
+    }//GEN-LAST:event_jMenuItemFormEmpActionPerformed
 
     /**
      * @param args the command line arguments
@@ -86,5 +163,13 @@ public class TablaEmpresas extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenu jMenuAlumnos;
+    private javax.swing.JMenuBar jMenuBarInicio;
+    private javax.swing.JMenu jMenuEmpresa;
+    private javax.swing.JMenuItem jMenuItemFormAlum;
+    private javax.swing.JMenuItem jMenuItemFormEmp;
+    private javax.swing.JMenuItem jMenuItemTablaAlum;
+    private javax.swing.JMenuItem jMenuItemTablaEmp;
+    private javax.swing.JMenu jMenuPrincipal;
     // End of variables declaration//GEN-END:variables
 }

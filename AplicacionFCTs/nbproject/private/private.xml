@@ -12,5 +12,18 @@
             <file>file:/D:/Users/PabloTejedorRivadull/Documents/NetBeansProjects/DI/RepositorioMiAplicacion/AplicacionFCTs/src/gui/TablaAlumnos.java</file>
             <file>file:/D:/Users/PabloTejedorRivadull/Documents/NetBeansProjects/DI/RepositorioMiAplicacion/AplicacionFCTs/src/gui/PantallaPrincipal.java</file>
         </group>
+        <group name="RepoAplicacionFCT">
+            <file>file:/C:/Users/pablo/OneDrive/Documentos/NetBeansProjects/RepoAplicacionFCT/AplicacionFCTs/src/dto/Alumno.java</file>
+            <file>file:/C:/Users/pablo/OneDrive/Documentos/NetBeansProjects/RepoAplicacionFCT/AplicacionFCTs/src/gui/TablaEmpresas.java</file>
+            <file>file:/C:/Users/pablo/OneDrive/Documentos/NetBeansProjects/RepoAplicacionFCT/AplicacionFCTs/src/gui/FormularioAlumnos.java</file>
+            <file>file:/C:/Users/pablo/OneDrive/Documentos/NetBeansProjects/RepoAplicacionFCT/AplicacionFCTs/src/gui/tablemodel/AlumnosTableModel.java</file>
+            <file>file:/C:/Users/pablo/OneDrive/Documentos/NetBeansProjects/RepoAplicacionFCT/AplicacionFCTs/src/gui/FormularioEmpresas.java</file>
+            <file>file:/C:/Users/pablo/OneDrive/Documentos/NetBeansProjects/RepoAplicacionFCT/AplicacionFCTs/src/dto/Empresa.java</file>
+            <file>file:/C:/Users/pablo/OneDrive/Documentos/NetBeansProjects/RepoAplicacionFCT/AplicacionFCTs/src/gui/PantallaPrincipal.java</file>
+            <file>file:/C:/Users/pablo/OneDrive/Documentos/NetBeansProjects/RepoAplicacionFCT/AplicacionFCTs/src/logica/ListaAlumnos.java</file>
+            <file>file:/C:/Users/pablo/OneDrive/Documentos/NetBeansProjects/RepoAplicacionFCT/AplicacionFCTs/src/gui/TablaAlumnos.java</file>
+            <file>file:/C:/Users/pablo/OneDrive/Documentos/NetBeansProjects/RepoAplicacionFCT/AplicacionFCTs/src/logica/ListaEmpresas.java</file>
+            <file>file:/C:/Users/pablo/OneDrive/Documentos/NetBeansProjects/RepoAplicacionFCT/AplicacionFCTs/src/gui/MenuPrincipal.java</file>
+        </group>
     </open-files>
 </project-private>
