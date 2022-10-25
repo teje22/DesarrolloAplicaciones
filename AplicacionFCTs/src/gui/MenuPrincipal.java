@@ -4,6 +4,7 @@
  */
 package gui;
 
+import javax.swing.JDialog;
 import javax.swing.text.TabableView;
 
 
@@ -140,22 +141,22 @@ public class MenuPrincipal extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jMenuItemTablaAlumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemTablaAlumActionPerformed
-        TablaAlumnos tablaAlumnos = new TablaAlumnos(pantallaPrincipal, true);
+        TablaAlumnos tablaAlumnos = new TablaAlumnos(pantallaPrincipal, false);
         tablaAlumnos.setVisible(true);
     }//GEN-LAST:event_jMenuItemTablaAlumActionPerformed
 
     private void jMenuItemFormAlumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemFormAlumActionPerformed
-        FormularioAlumnos formularioAlum = new FormularioAlumnos(pantallaPrincipal, true);
+        FormularioAlumnos formularioAlum = new FormularioAlumnos(pantallaPrincipal, false);
         formularioAlum.setVisible(true);
     }//GEN-LAST:event_jMenuItemFormAlumActionPerformed
 
     private void jMenuItemTablaEmpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemTablaEmpActionPerformed
-        TablaEmpresas tablaEmpresas = new TablaEmpresas(pantallaPrincipal, true);
+        TablaEmpresas tablaEmpresas = new TablaEmpresas(pantallaPrincipal, false);
         tablaEmpresas.setVisible(true);
     }//GEN-LAST:event_jMenuItemTablaEmpActionPerformed
 
     private void jMenuItemFormEmpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemFormEmpActionPerformed
-        FormularioEmpresas formularioEmp = new FormularioEmpresas(pantallaPrincipal, true);
+        FormularioEmpresas formularioEmp = new FormularioEmpresas(pantallaPrincipal, false);
         formularioEmp.setVisible(true);
     }//GEN-LAST:event_jMenuItemFormEmpActionPerformed
 

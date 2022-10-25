@@ -14,7 +14,7 @@ import logica.ListaAlumnos;
 public class TablaAlumnos extends javax.swing.JDialog {
     
     private PantallaPrincipal pantallaPrincipal;
-    private ListaAlumnos listaUsuarios = new ListaAlumnos();
+    private ListaAlumnos listaAlumnos = new ListaAlumnos();
 
     /**
      * Creates new form TablaUsuarios
@@ -22,7 +22,7 @@ public class TablaAlumnos extends javax.swing.JDialog {
     public TablaAlumnos(java.awt.Frame parent, boolean modal) {
         super(parent, false);
         initComponents();
-        jTableUsuarios.setModel(new AlumnosTableModel(listaUsuarios.getListaUsuarios()));
+        jTableUsuarios.setModel(new AlumnosTableModel(listaAlumnos.getListaAlumnos()));
     }
 
     /**
@@ -141,12 +141,12 @@ public class TablaAlumnos extends javax.swing.JDialog {
     }//GEN-LAST:event_jMenuItemInicioActionPerformed
 
     private void jMenuItemTablaEmpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemTablaEmpActionPerformed
-        TablaEmpresas tablaEmpresas = new TablaEmpresas(pantallaPrincipal, true);
+        TablaEmpresas tablaEmpresas = new TablaEmpresas(pantallaPrincipal, false);
         tablaEmpresas.setVisible(true);
     }//GEN-LAST:event_jMenuItemTablaEmpActionPerformed
 
     private void jMenuItemFormEmpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemFormEmpActionPerformed
-        FormularioEmpresas formularioEmp = new FormularioEmpresas(pantallaPrincipal, true);
+        FormularioEmpresas formularioEmp = new FormularioEmpresas(pantallaPrincipal, false);
         formularioEmp.setVisible(true);
     }//GEN-LAST:event_jMenuItemFormEmpActionPerformed
 

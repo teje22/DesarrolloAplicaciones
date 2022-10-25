@@ -2,11 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group name="DI">
-            <file>file:/D:/Users/PabloTejedorRivadull/Documents/NetBeansProjects/DI/RepositorioMiAplicacion/AplicacionFCTs/src/gui/MenuPrincipal.java</file>
-            <file>file:/D:/Users/PabloTejedorRivadull/Documents/NetBeansProjects/DI/RepositorioMiAplicacion/AplicacionFCTs/src/gui/TablaAlumnos.java</file>
-            <file>file:/D:/Users/PabloTejedorRivadull/Documents/NetBeansProjects/DI/RepositorioMiAplicacion/AplicacionFCTs/src/gui/PantallaPrincipal.java</file>
-        </group>
         <group name="RepoAplicacionFCT">
             <file>file:/C:/Users/pablo/OneDrive/Documentos/NetBeansProjects/RepoAplicacionFCT/AplicacionFCTs/src/dto/Alumno.java</file>
             <file>file:/C:/Users/pablo/OneDrive/Documentos/NetBeansProjects/RepoAplicacionFCT/AplicacionFCTs/src/gui/TablaEmpresas.java</file>
@@ -20,7 +15,6 @@
             <file>file:/C:/Users/pablo/OneDrive/Documentos/NetBeansProjects/RepoAplicacionFCT/AplicacionFCTs/src/logica/ListaEmpresas.java</file>
             <file>file:/C:/Users/pablo/OneDrive/Documentos/NetBeansProjects/RepoAplicacionFCT/AplicacionFCTs/src/gui/MenuPrincipal.java</file>
         </group>
-<<<<<<< HEAD
         <group name="RepositorioMiAplicacion">
             <file>file:/D:/Users/PabloTejedorRivadull/Documents/NetBeansProjects/DI/RepositorioMiAplicacion/AplicacionFCTs/src/gui/FormularioAlumnos.java</file>
             <file>file:/D:/Users/PabloTejedorRivadull/Documents/NetBeansProjects/DI/RepositorioMiAplicacion/AplicacionFCTs/src/gui/tablemodel/EmpresaTableModel.java</file>
@@ -29,7 +23,12 @@
             <file>file:/D:/Users/PabloTejedorRivadull/Documents/NetBeansProjects/DI/RepositorioMiAplicacion/AplicacionFCTs/src/gui/PantallaPrincipal.java</file>
             <file>file:/D:/Users/PabloTejedorRivadull/Documents/NetBeansProjects/DI/RepositorioMiAplicacion/AplicacionFCTs/src/dto/Alumno.java</file>
         </group>
-=======
->>>>>>> 93a678e686951a9300249305b271cc9ce95e804c
+        <group name="DI">
+            <file>file:/D:/Users/PabloTejedorRivadull/Documents/NetBeansProjects/DI/RepositorioMiAplicacion/AplicacionFCTs/src/gui/MenuPrincipal.java</file>
+            <file>file:/D:/Users/PabloTejedorRivadull/Documents/NetBeansProjects/DI/RepositorioMiAplicacion/AplicacionFCTs/src/gui/TablaEmpresas.java</file>
+            <file>file:/D:/Users/PabloTejedorRivadull/Documents/NetBeansProjects/DI/RepositorioMiAplicacion/AplicacionFCTs/src/gui/FormularioEmpresas.java</file>
+            <file>file:/D:/Users/PabloTejedorRivadull/Documents/NetBeansProjects/DI/RepositorioMiAplicacion/AplicacionFCTs/src/gui/TablaAlumnos.java</file>
+            <file>file:/D:/Users/PabloTejedorRivadull/Documents/NetBeansProjects/DI/RepositorioMiAplicacion/AplicacionFCTs/src/gui/PantallaPrincipal.java</file>
+        </group>
     </open-files>
 </project-private>
