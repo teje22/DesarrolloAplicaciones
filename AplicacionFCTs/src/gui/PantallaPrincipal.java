@@ -137,7 +137,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonCancelarActionPerformed
 
     private void jButtonAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAceptarActionPerformed
-        MenuPrincipal menu  = new MenuPrincipal(this , false);
+        MenuPrincipal menu  = new MenuPrincipal(this , true);
         menu.setVisible(true);
     }//GEN-LAST:event_jButtonAceptarActionPerformed
 

@@ -38,8 +38,12 @@ public class TablaAlumnos extends javax.swing.JDialog {
         jTableUsuarios = new javax.swing.JTable();
         jButtonVolver = new javax.swing.JButton();
         jMenuBarInicio = new javax.swing.JMenuBar();
+        jMenuPrincipal = new javax.swing.JMenu();
         jMenuInicio = new javax.swing.JMenu();
-        jMenuEmpesas = new javax.swing.JMenu();
+        jMenuItemInicio = new javax.swing.JMenuItem();
+        jMenuEmpresa = new javax.swing.JMenu();
+        jMenuItemTablaEmp = new javax.swing.JMenuItem();
+        jMenuItemFormEmp = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -63,11 +67,41 @@ public class TablaAlumnos extends javax.swing.JDialog {
             }
         });
 
-        jMenuInicio.setText("Inicio");
-        jMenuBarInicio.add(jMenuInicio);
+        jMenuPrincipal.setText("Menú");
 
-        jMenuEmpesas.setText("Empresas");
-        jMenuBarInicio.add(jMenuEmpesas);
+        jMenuInicio.setText("Inicio");
+
+        jMenuItemInicio.setText("Inicio");
+        jMenuItemInicio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemInicioActionPerformed(evt);
+            }
+        });
+        jMenuInicio.add(jMenuItemInicio);
+
+        jMenuPrincipal.add(jMenuInicio);
+
+        jMenuEmpresa.setText("Empresas");
+
+        jMenuItemTablaEmp.setText("Tabla de Empresas");
+        jMenuItemTablaEmp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemTablaEmpActionPerformed(evt);
+            }
+        });
+        jMenuEmpresa.add(jMenuItemTablaEmp);
+
+        jMenuItemFormEmp.setText("Formulario Empresas");
+        jMenuItemFormEmp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemFormEmpActionPerformed(evt);
+            }
+        });
+        jMenuEmpresa.add(jMenuItemFormEmp);
+
+        jMenuPrincipal.add(jMenuEmpresa);
+
+        jMenuBarInicio.add(jMenuPrincipal);
 
         setJMenuBar(jMenuBarInicio);
 
@@ -89,7 +123,7 @@ public class TablaAlumnos extends javax.swing.JDialog {
             .addGroup(layout.createSequentialGroup()
                 .addGap(85, 85, 85)
                 .addComponent(jScrollPaneTableUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 127, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 104, Short.MAX_VALUE)
                 .addComponent(jButtonVolver)
                 .addGap(39, 39, 39))
         );
@@ -101,6 +135,21 @@ public class TablaAlumnos extends javax.swing.JDialog {
         setVisible(false);
     }//GEN-LAST:event_jButtonVolverActionPerformed
 
+    private void jMenuItemInicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemInicioActionPerformed
+        MenuPrincipal menu = new MenuPrincipal(pantallaPrincipal, false);
+        menu.setVisible(true);
+    }//GEN-LAST:event_jMenuItemInicioActionPerformed
+
+    private void jMenuItemTablaEmpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemTablaEmpActionPerformed
+        TablaEmpresas tablaEmpresas = new TablaEmpresas(pantallaPrincipal, true);
+        tablaEmpresas.setVisible(true);
+    }//GEN-LAST:event_jMenuItemTablaEmpActionPerformed
+
+    private void jMenuItemFormEmpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemFormEmpActionPerformed
+        FormularioEmpresas formularioEmp = new FormularioEmpresas(pantallaPrincipal, true);
+        formularioEmp.setVisible(true);
+    }//GEN-LAST:event_jMenuItemFormEmpActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -109,8 +158,12 @@ public class TablaAlumnos extends javax.swing.JDialog {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonVolver;
     private javax.swing.JMenuBar jMenuBarInicio;
-    private javax.swing.JMenu jMenuEmpesas;
+    private javax.swing.JMenu jMenuEmpresa;
     private javax.swing.JMenu jMenuInicio;
+    private javax.swing.JMenuItem jMenuItemFormEmp;
+    private javax.swing.JMenuItem jMenuItemInicio;
+    private javax.swing.JMenuItem jMenuItemTablaEmp;
+    private javax.swing.JMenu jMenuPrincipal;
     private javax.swing.JScrollPane jScrollPaneTableUsuarios;
     private javax.swing.JTable jTableUsuarios;
     // End of variables declaration//GEN-END:variables

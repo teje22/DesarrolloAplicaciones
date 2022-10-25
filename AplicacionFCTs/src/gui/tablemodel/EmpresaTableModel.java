@@ -14,7 +14,7 @@ import javax.swing.table.AbstractTableModel;
  */
 public class EmpresaTableModel extends AbstractTableModel {
     private List<Empresa> listEmpresa;
-    private String[] columnas = {"Empresa", "Nombre de contacto", "Número de contacto"};
+    private String[] columnas = {"Empresa", "Nombre de contacto", "CIF", "Télefono", "Dirección"};
 
     public EmpresaTableModel(List<Empresa> listEmpresa) {
         this.listEmpresa = listEmpresa;
@@ -42,7 +42,11 @@ public class EmpresaTableModel extends AbstractTableModel {
             case 1:
                 return listEmpresa.get(rowIndex).getContacto();
             case 2:
+                return listEmpresa.get(rowIndex).getCif();
+            case 3:
                 return listEmpresa.get(rowIndex).getNumero_tlf();
+            case 4:
+                return listEmpresa.get(rowIndex).getDireccion();
         }
         return null;
     }

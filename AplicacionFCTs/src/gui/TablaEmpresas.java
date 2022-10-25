@@ -4,6 +4,9 @@
  */
 package gui;
 
+import gui.tablemodel.EmpresaTableModel;
+import logica.ListaEmpresas;
+
 /**
  *
  * @author PabloTejedorRivadull
@@ -13,9 +16,13 @@ public class TablaEmpresas extends javax.swing.JDialog {
     /**
      * Creates new form TablaEmpresas
      */
+    private PantallaPrincipal pantallaPrincipal;
+    private ListaEmpresas listaEmpresas = new ListaEmpresas();
+    
     public TablaEmpresas(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        jTableEmpresas.setModel(new EmpresaTableModel(listaEmpresas.getListaEmpresas()));
     }
 
     /**
@@ -27,64 +34,117 @@ public class TablaEmpresas extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTableEmpresas = new javax.swing.JTable();
+        jMenuBarInicio = new javax.swing.JMenuBar();
+        jMenuPrincipal = new javax.swing.JMenu();
+        jMenuInicio = new javax.swing.JMenu();
+        jMenuItemInicio = new javax.swing.JMenuItem();
+        jMenuAlumnos = new javax.swing.JMenu();
+        jMenuItemTablaAlum = new javax.swing.JMenuItem();
+        jMenuItemFormAlum = new javax.swing.JMenuItem();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+
+        jTableEmpresas.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(jTableEmpresas);
+
+        jMenuPrincipal.setText("Menú");
+
+        jMenuInicio.setText("Inicio");
+
+        jMenuItemInicio.setText("Inicio");
+        jMenuItemInicio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemInicioActionPerformed(evt);
+            }
+        });
+        jMenuInicio.add(jMenuItemInicio);
+
+        jMenuPrincipal.add(jMenuInicio);
+
+        jMenuAlumnos.setText("Alumnos");
+
+        jMenuItemTablaAlum.setText("Tabla de Alumnos");
+        jMenuItemTablaAlum.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemTablaAlumActionPerformed(evt);
+            }
+        });
+        jMenuAlumnos.add(jMenuItemTablaAlum);
+
+        jMenuItemFormAlum.setText("Formulario de Alumnos");
+        jMenuItemFormAlum.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemFormAlumActionPerformed(evt);
+            }
+        });
+        jMenuAlumnos.add(jMenuItemFormAlum);
+
+        jMenuPrincipal.add(jMenuAlumnos);
+
+        jMenuBarInicio.add(jMenuPrincipal);
+
+        setJMenuBar(jMenuBarInicio);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap(66, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(73, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 278, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(36, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jMenuItemTablaAlumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemTablaAlumActionPerformed
+        TablaAlumnos tablaAlumnos = new TablaAlumnos(pantallaPrincipal, true);
+        tablaAlumnos.setVisible(true);
+    }//GEN-LAST:event_jMenuItemTablaAlumActionPerformed
+
+    private void jMenuItemFormAlumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemFormAlumActionPerformed
+        FormularioAlumnos formularioAlum = new FormularioAlumnos(pantallaPrincipal, true);
+        formularioAlum.setVisible(true);
+    }//GEN-LAST:event_jMenuItemFormAlumActionPerformed
+
+    private void jMenuItemInicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemInicioActionPerformed
+        MenuPrincipal menu = new MenuPrincipal(pantallaPrincipal, false);
+        menu.setVisible(true);
+    }//GEN-LAST:event_jMenuItemInicioActionPerformed
+
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(TablaEmpresas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(TablaEmpresas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(TablaEmpresas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TablaEmpresas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the dialog */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                TablaEmpresas dialog = new TablaEmpresas(new javax.swing.JFrame(), true);
-                dialog.addWindowListener(new java.awt.event.WindowAdapter() {
-                    @Override
-                    public void windowClosing(java.awt.event.WindowEvent e) {
-                        System.exit(0);
-                    }
-                });
-                dialog.setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenu jMenuAlumnos;
+    private javax.swing.JMenuBar jMenuBarInicio;
+    private javax.swing.JMenu jMenuInicio;
+    private javax.swing.JMenuItem jMenuItemFormAlum;
+    private javax.swing.JMenuItem jMenuItemInicio;
+    private javax.swing.JMenuItem jMenuItemTablaAlum;
+    private javax.swing.JMenu jMenuPrincipal;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTableEmpresas;
     // End of variables declaration//GEN-END:variables
 }

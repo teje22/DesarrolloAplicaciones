@@ -4,15 +4,50 @@
   <NonVisualComponents>
     <Menu class="javax.swing.JMenuBar" name="jMenuBarInicio">
       <SubComponents>
-        <Menu class="javax.swing.JMenu" name="jMenuInicio">
+        <Menu class="javax.swing.JMenu" name="jMenuPrincipal">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Inicio"/>
+            <Property name="text" type="java.lang.String" value="Men&#xfa;"/>
           </Properties>
-        </Menu>
-        <Menu class="javax.swing.JMenu" name="jMenuEmpesas">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Empresas"/>
-          </Properties>
+          <SubComponents>
+            <Menu class="javax.swing.JMenu" name="jMenuInicio">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Inicio"/>
+              </Properties>
+              <SubComponents>
+                <MenuItem class="javax.swing.JMenuItem" name="jMenuItemInicio">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Inicio"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItemInicioActionPerformed"/>
+                  </Events>
+                </MenuItem>
+              </SubComponents>
+            </Menu>
+            <Menu class="javax.swing.JMenu" name="jMenuEmpresa">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Empresas"/>
+              </Properties>
+              <SubComponents>
+                <MenuItem class="javax.swing.JMenuItem" name="jMenuItemTablaEmp">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Tabla de Empresas"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItemTablaEmpActionPerformed"/>
+                  </Events>
+                </MenuItem>
+                <MenuItem class="javax.swing.JMenuItem" name="jMenuItemFormEmp">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Formulario Empresas"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItemFormEmpActionPerformed"/>
+                  </Events>
+                </MenuItem>
+              </SubComponents>
+            </Menu>
+          </SubComponents>
         </Menu>
       </SubComponents>
     </Menu>
@@ -57,7 +92,7 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="85" max="-2" attributes="0"/>
               <Component id="jScrollPaneTableUsuarios" min="-2" pref="142" max="-2" attributes="0"/>
-              <EmptySpace pref="127" max="32767" attributes="0"/>
+              <EmptySpace pref="104" max="32767" attributes="0"/>
               <Component id="jButtonVolver" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
           </Group>
