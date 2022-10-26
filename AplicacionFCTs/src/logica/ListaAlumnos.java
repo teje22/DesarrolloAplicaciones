@@ -20,6 +20,11 @@ public class ListaAlumnos {
     
     public ListaAlumnos(){
         listaAlumnos = new ArrayList<>();
+        cargaAlumnos();
+        
+    }
+    
+    public void cargaAlumnos(){
         listaAlumnos.add(new Alumno("Pablo","Tejedor", "123456789M" ,ini,fin, "2ºDAM-B"  ));
         listaAlumnos.add(new Alumno("David","Campos", "987456321J" ,ini, fin, "2ºDAM-B"));
         listaAlumnos.add(new Alumno("Alfonso","Diaz", "564789321P", ini, fin, "2ºDAM-A"));

@@ -5,7 +5,7 @@
 package gui;
 
 import gui.tablemodel.AlumnosTableModel;
-import logica.ListaAlumnos;
+import gui.MenuPrincipal;
 
 /**
  *
@@ -14,15 +14,16 @@ import logica.ListaAlumnos;
 public class TablaAlumnos extends javax.swing.JDialog {
     
     private PantallaPrincipal pantallaPrincipal;
-    private ListaAlumnos listaAlumnos = new ListaAlumnos();
+    public MenuPrincipal listAlumnos;
+    
 
     /**
      * Creates new form TablaUsuarios
      */
-    public TablaAlumnos(java.awt.Frame parent, boolean modal) {
-        super(parent, false);
+    public TablaAlumnos(java.awt.Dialog parent, boolean modal) {
+        super(parent, true);
         initComponents();
-        jTableUsuarios.setModel(new AlumnosTableModel(listaAlumnos.getListaAlumnos()));
+        jTableUsuarios.setModel(new AlumnosTableModel(listAlumnos.listaAlumnos.getListaAlumnos()));
     }
 
     /**
@@ -141,7 +142,7 @@ public class TablaAlumnos extends javax.swing.JDialog {
     }//GEN-LAST:event_jMenuItemInicioActionPerformed
 
     private void jMenuItemTablaEmpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemTablaEmpActionPerformed
-        TablaEmpresas tablaEmpresas = new TablaEmpresas(pantallaPrincipal, false);
+        TablaEmpresas tablaEmpresas = new TablaEmpresas(this, false);
         tablaEmpresas.setVisible(true);
     }//GEN-LAST:event_jMenuItemTablaEmpActionPerformed
 

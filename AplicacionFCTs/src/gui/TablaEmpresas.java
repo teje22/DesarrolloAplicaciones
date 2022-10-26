@@ -19,7 +19,7 @@ public class TablaEmpresas extends javax.swing.JDialog {
     private PantallaPrincipal pantallaPrincipal;
     private ListaEmpresas listaEmpresas = new ListaEmpresas();
     
-    public TablaEmpresas(java.awt.Frame parent, boolean modal) {
+    public TablaEmpresas(java.awt.Dialog parent, boolean modal) {
         super(parent, modal);
         initComponents();
         jTableEmpresas.setModel(new EmpresaTableModel(listaEmpresas.getListaEmpresas()));
@@ -118,7 +118,7 @@ public class TablaEmpresas extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jMenuItemTablaAlumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemTablaAlumActionPerformed
-        TablaAlumnos tablaAlumnos = new TablaAlumnos(pantallaPrincipal, true);
+        TablaAlumnos tablaAlumnos = new TablaAlumnos(this, true);
         tablaAlumnos.setVisible(true);
     }//GEN-LAST:event_jMenuItemTablaAlumActionPerformed
 

@@ -211,8 +211,6 @@ public class FormularioAlumnos extends javax.swing.JDialog {
         String curso = jTextFieldCurso.getText();
         Alumno alumno = new Alumno(nombre,apellidos, dni, fechaIni, fechaFin, curso);
         ListaAlumnos.aniadirAlumno(alumno);
-        TablaAlumnos alumns = new TablaAlumnos(pantallaPrincipal, false);
-        alumns.setVisible(true);
         dispose();
         
     }//GEN-LAST:event_jButtonAcepptarActionPerformed

@@ -6,6 +6,7 @@ package gui;
 
 import javax.swing.JDialog;
 import javax.swing.text.TabableView;
+import logica.ListaAlumnos;
 
 
 /**
@@ -18,9 +19,10 @@ public class MenuPrincipal extends javax.swing.JDialog {
      * Creates new form MenÃºPrincipal
      */
     private PantallaPrincipal pantallaPrincipal;
+    public ListaAlumnos listaAlumnos = new ListaAlumnos();
     
     public MenuPrincipal(java.awt.Frame parent, boolean modal) {
-        super(parent, modal);
+        super(parent, false);
         parent.setVisible(false);
         initComponents();
     }
@@ -141,7 +143,7 @@ public class MenuPrincipal extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jMenuItemTablaAlumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemTablaAlumActionPerformed
-        TablaAlumnos tablaAlumnos = new TablaAlumnos(pantallaPrincipal, false);
+        TablaAlumnos tablaAlumnos = new TablaAlumnos(this, false);
         tablaAlumnos.setVisible(true);
     }//GEN-LAST:event_jMenuItemTablaAlumActionPerformed
 
@@ -151,7 +153,7 @@ public class MenuPrincipal extends javax.swing.JDialog {
     }//GEN-LAST:event_jMenuItemFormAlumActionPerformed
 
     private void jMenuItemTablaEmpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemTablaEmpActionPerformed
-        TablaEmpresas tablaEmpresas = new TablaEmpresas(pantallaPrincipal, false);
+        TablaEmpresas tablaEmpresas = new TablaEmpresas(this, false);
         tablaEmpresas.setVisible(true);
     }//GEN-LAST:event_jMenuItemTablaEmpActionPerformed
 
