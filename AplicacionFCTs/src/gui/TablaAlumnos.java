@@ -4,8 +4,12 @@
  */
 package gui;
 
+import dto.Alumno;
 import gui.tablemodel.AlumnosTableModel;
 import gui.MenuPrincipal;
+import java.util.List;
+import javax.swing.table.DefaultTableModel;
+import logica.ListaAlumnos;
 
 /**
  *
@@ -14,7 +18,7 @@ import gui.MenuPrincipal;
 public class TablaAlumnos extends javax.swing.JDialog {
     
     private PantallaPrincipal pantallaPrincipal;
-    public MenuPrincipal listAlumnos;
+    
     
 
     /**
@@ -23,7 +27,20 @@ public class TablaAlumnos extends javax.swing.JDialog {
     public TablaAlumnos(java.awt.Dialog parent, boolean modal) {
         super(parent, true);
         initComponents();
-        jTableUsuarios.setModel(new AlumnosTableModel(listAlumnos.listaAlumnos.getListaAlumnos()));
+        refrescarTabla();
+        
+    }
+    
+    private void refrescarTabla(){
+        DefaultTableModel dtm = new DefaultTableModel();
+        dtm.setColumnIdentifiers(new String[]{"Nombre", "Apellidos", "DNI", "Fecha Inicio", "Fecha Fin", "Curso"});
+        
+        List<Alumno> listaAlumnos = ListaAlumnos.getListaAlumnos();
+        for (Alumno alumno : listaAlumnos){
+            dtm.addRow(alumno.toArrayString());
+        }
+        
+        jTableUsuarios.setModel(dtm);
     }
 
     /**

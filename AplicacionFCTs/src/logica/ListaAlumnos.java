@@ -31,7 +31,7 @@ public class ListaAlumnos {
         listaAlumnos.add(new Alumno("Rocio","Ramos", "123658974R", ini, fin, "2ºDAW-A"));
     }
     
-    public List<Alumno> getListaAlumnos(){
+    public static List<Alumno> getListaAlumnos(){
         return listaAlumnos;
     }
 

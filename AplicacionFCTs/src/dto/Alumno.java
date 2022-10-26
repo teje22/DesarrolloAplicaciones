@@ -1,9 +1,6 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package dto;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
@@ -18,6 +15,7 @@ public class Alumno {
     private Date fechaIni;
     private Date fechaFin;
     private String curso;
+    private SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
 
     public Alumno(String nombre, String apellidos, String dni, Date fechaIni, Date fechaFin, String curso) {
         this.nombre = nombre;
@@ -76,4 +74,14 @@ public class Alumno {
         this.curso = curso;
     }
     
+    public String[] toArrayString(){
+        String[] s = new String[6];
+        s[0] = nombre;
+        s[1] = apellidos;
+        s[2] = dni;
+        s[3] = sdf.format(fechaIni);
+        s[4] = sdf.format(fechaFin);
+        s[5] = curso;
+        return s;
+    }
 }
