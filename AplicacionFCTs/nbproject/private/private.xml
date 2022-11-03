@@ -15,9 +15,15 @@
             <file>file:/C:/Users/pablo/OneDrive/Documentos/NetBeansProjects/RepoAplicacionFCT/AplicacionFCTs/src/logica/ListaEmpresas.java</file>
             <file>file:/C:/Users/pablo/OneDrive/Documentos/NetBeansProjects/RepoAplicacionFCT/AplicacionFCTs/src/gui/MenuPrincipal.java</file>
         </group>
-        <group name="DI"/>
         <group name="RepositorioMiAplicacion">
-            <file>file:/D:/Users/PabloTejedorRivadull/Documents/NetBeansProjects/DI/RepositorioMiAplicacion/AplicacionFCTs/src/gui/TablaAlumnos.java</file>
+            <file>file:/D:/Users/PabloTejedorRivadull/Documents/NetBeansProjects/DI/RepositorioMiAplicacion/AplicacionFCTs/src/gui/FormularioAlumnos.java</file>
+            <file>file:/D:/Users/PabloTejedorRivadull/Documents/NetBeansProjects/DI/RepositorioMiAplicacion/AplicacionFCTs/src/gui/FormularioEmpresas.java</file>
+            <file>file:/D:/Users/PabloTejedorRivadull/Documents/NetBeansProjects/DI/RepositorioMiAplicacion/AplicacionFCTs/src/logica/ListaEmpresas.java</file>
+            <file>file:/D:/Users/PabloTejedorRivadull/Documents/NetBeansProjects/DI/RepositorioMiAplicacion/AplicacionFCTs/src/logica/ListaAlumnos.java</file>
+            <file>file:/D:/Users/PabloTejedorRivadull/Documents/NetBeansProjects/DI/RepositorioMiAplicacion/AplicacionFCTs/src/gui/PantallaPrincipal.java</file>
+            <file>file:/D:/Users/PabloTejedorRivadull/Documents/NetBeansProjects/DI/RepositorioMiAplicacion/AplicacionFCTs/src/dto/Empresa.java</file>
+            <file>file:/D:/Users/PabloTejedorRivadull/Documents/NetBeansProjects/DI/RepositorioMiAplicacion/AplicacionFCTs/src/dto/Alumno.java</file>
         </group>
+        <group name="DI"/>
     </open-files>
 </project-private>

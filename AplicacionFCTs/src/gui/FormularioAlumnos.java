@@ -7,6 +7,10 @@ package gui;
 import java.util.Date;
 import dto.Alumno;
 import logica.ListaAlumnos;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
+import org.netbeans.validation.api.ui.ValidationGroup;
+import org.netbeans.validation.api.builtin.stringvalidation.StringValidators;
 
 /**
  *
@@ -23,6 +27,22 @@ public class FormularioAlumnos extends javax.swing.JDialog {
     public FormularioAlumnos(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        
+        jButtonAceptar.setEnabled(false);
+        ValidationGroup grupo = validationPanel.getValidationGroup();
+        grupo.add(jTextFieldNombre, StringValidators.REQUIRE_NON_EMPTY_STRING);
+        grupo.add(jTextFieldApelidos, StringValidators.REQUIRE_NON_EMPTY_STRING);
+        grupo.add(jTextFieldDNI, StringValidators.REQUIRE_NON_EMPTY_STRING);
+        validationPanel.addChangeListener(new ChangeListener() {
+            @Override
+            public void stateChanged(ChangeEvent e) {
+                if (validationPanel.getProblem() == null){
+                    jButtonAceptar.setEnabled(true);
+                } else {
+                    jButtonAceptar.setEnabled(false);
+                }
+            }
+        });
     }
 
     /**
@@ -41,6 +61,7 @@ public class FormularioAlumnos extends javax.swing.JDialog {
         jTextFieldApelidos = new javax.swing.JTextField();
         jLabelDNI = new javax.swing.JLabel();
         jTextFieldDNI = new javax.swing.JTextField();
+        validationPanel = new org.netbeans.validation.api.ui.swing.ValidationPanel();
         jPanelInfoSec = new javax.swing.JPanel();
         jLabelFechaIni = new javax.swing.JLabel();
         jLabelFechaFin = new javax.swing.JLabel();
@@ -48,40 +69,50 @@ public class FormularioAlumnos extends javax.swing.JDialog {
         jSpinnerFechaFin = new javax.swing.JSpinner();
         jLabelCurso = new javax.swing.JLabel();
         jTextFieldCurso = new javax.swing.JTextField();
-        jButtonAcepptar = new javax.swing.JButton();
+        jButtonAceptar = new javax.swing.JButton();
         jButtonCancelar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        getContentPane().setLayout(new javax.swing.BoxLayout(getContentPane(), javax.swing.BoxLayout.LINE_AXIS));
 
         jLabelNombre.setText("Nombre");
 
+        jTextFieldNombre.setName("Nombre"); // NOI18N
+
         jLabelApellidos.setText("Apellidos");
 
+        jTextFieldApelidos.setName("Apellidos"); // NOI18N
+
         jLabelDNI.setText("DNI");
+
+        jTextFieldDNI.setName("DNI"); // NOI18N
 
         javax.swing.GroupLayout jPanelInfoOblgLayout = new javax.swing.GroupLayout(jPanelInfoOblg);
         jPanelInfoOblg.setLayout(jPanelInfoOblgLayout);
         jPanelInfoOblgLayout.setHorizontalGroup(
             jPanelInfoOblgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelInfoOblgLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanelInfoOblgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanelInfoOblgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(validationPanel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanelInfoOblgLayout.createSequentialGroup()
-                        .addComponent(jLabelNombre, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextFieldNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanelInfoOblgLayout.createSequentialGroup()
+                        .addContainerGap()
                         .addGroup(jPanelInfoOblgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanelInfoOblgLayout.createSequentialGroup()
                                 .addComponent(jLabelDNI, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jTextFieldDNI, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanelInfoOblgLayout.createSequentialGroup()
-                                .addComponent(jLabelApellidos, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(10, 10, 10)
-                                .addComponent(jTextFieldApelidos, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addGap(60, 60, 60))
+                                .addGroup(jPanelInfoOblgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanelInfoOblgLayout.createSequentialGroup()
+                                        .addComponent(jLabelApellidos, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(10, 10, 10))
+                                    .addGroup(jPanelInfoOblgLayout.createSequentialGroup()
+                                        .addComponent(jLabelNombre, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                                .addGroup(jPanelInfoOblgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jTextFieldNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jTextFieldApelidos, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                .addGap(0, 104, Short.MAX_VALUE))
         );
 
         jPanelInfoOblgLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jTextFieldApelidos, jTextFieldDNI, jTextFieldNombre});
@@ -101,8 +132,12 @@ public class FormularioAlumnos extends javax.swing.JDialog {
                 .addGroup(jPanelInfoOblgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelDNI)
                     .addComponent(jTextFieldDNI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(104, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(validationPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(355, Short.MAX_VALUE))
         );
+
+        getContentPane().add(jPanelInfoOblg);
 
         jLabelFechaIni.setText("FechaIni");
 
@@ -122,7 +157,7 @@ public class FormularioAlumnos extends javax.swing.JDialog {
             jPanelInfoSecLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelInfoSecLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanelInfoSecLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(jPanelInfoSecLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanelInfoSecLayout.createSequentialGroup()
                         .addComponent(jLabelFechaIni, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -132,10 +167,10 @@ public class FormularioAlumnos extends javax.swing.JDialog {
                             .addComponent(jLabelFechaFin, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabelCurso, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanelInfoSecLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jSpinnerFechaFin)
+                        .addGroup(jPanelInfoSecLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jSpinnerFechaFin, javax.swing.GroupLayout.DEFAULT_SIZE, 201, Short.MAX_VALUE)
                             .addComponent(jTextFieldCurso))))
-                .addGap(100, 100, 100))
+                .addContainerGap(19, Short.MAX_VALUE))
         );
 
         jPanelInfoSecLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jLabelFechaFin, jLabelFechaIni});
@@ -155,53 +190,31 @@ public class FormularioAlumnos extends javax.swing.JDialog {
                 .addGroup(jPanelInfoSecLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelCurso)
                     .addComponent(jTextFieldCurso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(118, Short.MAX_VALUE))
+                .addContainerGap(404, Short.MAX_VALUE))
         );
 
-        jButtonAcepptar.setText("Aceptar");
-        jButtonAcepptar.addActionListener(new java.awt.event.ActionListener() {
+        getContentPane().add(jPanelInfoSec);
+
+        jButtonAceptar.setText("Aceptar");
+        jButtonAceptar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonAcepptarActionPerformed(evt);
+                jButtonAceptarActionPerformed(evt);
             }
         });
+        getContentPane().add(jButtonAceptar);
 
         jButtonCancelar.setText("Cancelar");
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(22, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButtonCancelar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButtonAcepptar))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jPanelInfoOblg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(57, 57, 57)
-                        .addComponent(jPanelInfoSec, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(59, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanelInfoSec, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanelInfoOblg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 59, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButtonAcepptar)
-                    .addComponent(jButtonCancelar))
-                .addGap(43, 43, 43))
-        );
+        jButtonCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonCancelarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonCancelar);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButtonAcepptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAcepptarActionPerformed
+    private void jButtonAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAceptarActionPerformed
         
         String nombre = jTextFieldNombre.getText();
         String apellidos = jTextFieldApelidos.getText();
@@ -213,14 +226,18 @@ public class FormularioAlumnos extends javax.swing.JDialog {
         ListaAlumnos.aniadirAlumno(alumno);
         dispose();
         
-    }//GEN-LAST:event_jButtonAcepptarActionPerformed
+    }//GEN-LAST:event_jButtonAceptarActionPerformed
+
+    private void jButtonCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarActionPerformed
+        dispose();
+    }//GEN-LAST:event_jButtonCancelarActionPerformed
 
     /**
      * @param args the command line arguments
      */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtonAcepptar;
+    private javax.swing.JButton jButtonAceptar;
     private javax.swing.JButton jButtonCancelar;
     private javax.swing.JLabel jLabelApellidos;
     private javax.swing.JLabel jLabelCurso;
@@ -236,5 +253,6 @@ public class FormularioAlumnos extends javax.swing.JDialog {
     private javax.swing.JTextField jTextFieldCurso;
     private javax.swing.JTextField jTextFieldDNI;
     private javax.swing.JTextField jTextFieldNombre;
+    private org.netbeans.validation.api.ui.swing.ValidationPanel validationPanel;
     // End of variables declaration//GEN-END:variables
 }

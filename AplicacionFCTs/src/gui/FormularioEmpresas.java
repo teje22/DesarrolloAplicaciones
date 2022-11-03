@@ -4,6 +4,13 @@
  */
 package gui;
 
+import dto.Empresa;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
+import logica.ListaEmpresas;
+import org.netbeans.validation.api.builtin.stringvalidation.StringValidators;
+import org.netbeans.validation.api.ui.ValidationGroup;
+
 /**
  *
  * @author pablo
@@ -16,6 +23,22 @@ public class FormularioEmpresas extends javax.swing.JDialog {
     public FormularioEmpresas(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        
+        jButtonAceptar.setEnabled(false);
+        ValidationGroup grupo = validationPanel.getValidationGroup();
+        grupo.add(jTextFieldNombre, StringValidators.REQUIRE_NON_EMPTY_STRING);
+        grupo.add(jTextFieldContacto, StringValidators.REQUIRE_NON_EMPTY_STRING);
+        grupo.add(jTextFieldCIF, StringValidators.REQUIRE_NON_EMPTY_STRING);
+        validationPanel.addChangeListener(new ChangeListener() {
+            @Override
+            public void stateChanged(ChangeEvent e) {
+                if (validationPanel.getProblem() == null){
+                    jButtonAceptar.setEnabled(true);
+                } else {
+                    jButtonAceptar.setEnabled(false);
+                }
+            }
+        });
     }
 
     /**
@@ -31,24 +54,32 @@ public class FormularioEmpresas extends javax.swing.JDialog {
         jLabelNombre = new javax.swing.JLabel();
         jTextFieldNombre = new javax.swing.JTextField();
         jLabelContacto = new javax.swing.JLabel();
-        jTextFieldApelidos = new javax.swing.JTextField();
+        jTextFieldContacto = new javax.swing.JTextField();
         jLabelCIF = new javax.swing.JLabel();
-        jTextFieldDNI = new javax.swing.JTextField();
+        jTextFieldCIF = new javax.swing.JTextField();
+        validationPanel = new org.netbeans.validation.api.ui.swing.ValidationPanel();
         jPanelInfoSec = new javax.swing.JPanel();
         jLabelTlf = new javax.swing.JLabel();
-        jLabelCurso = new javax.swing.JLabel();
-        jTextFieldCurso = new javax.swing.JTextField();
+        jLabelDireccion = new javax.swing.JLabel();
+        jTextFieldDireccion = new javax.swing.JTextField();
         jTextFieldTlf = new javax.swing.JTextField();
-        jButtonAcepptar = new javax.swing.JButton();
+        jButtonAceptar = new javax.swing.JButton();
         jButtonCancelar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        getContentPane().setLayout(new javax.swing.BoxLayout(getContentPane(), javax.swing.BoxLayout.LINE_AXIS));
 
         jLabelNombre.setText("Nombre");
 
+        jTextFieldNombre.setName("Nombre"); // NOI18N
+
         jLabelContacto.setText("Contacto");
 
+        jTextFieldContacto.setName("Contacto"); // NOI18N
+
         jLabelCIF.setText("CIF");
+
+        jTextFieldCIF.setName("CIF"); // NOI18N
 
         javax.swing.GroupLayout jPanelInfoOblgLayout = new javax.swing.GroupLayout(jPanelInfoOblg);
         jPanelInfoOblg.setLayout(jPanelInfoOblgLayout);
@@ -62,20 +93,21 @@ public class FormularioEmpresas extends javax.swing.JDialog {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jTextFieldNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanelInfoOblgLayout.createSequentialGroup()
-                        .addGroup(jPanelInfoOblgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(jPanelInfoOblgLayout.createSequentialGroup()
+                        .addGroup(jPanelInfoOblgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(validationPanel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelInfoOblgLayout.createSequentialGroup()
                                 .addComponent(jLabelCIF, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jTextFieldDNI, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanelInfoOblgLayout.createSequentialGroup()
+                                .addComponent(jTextFieldCIF, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelInfoOblgLayout.createSequentialGroup()
                                 .addComponent(jLabelContacto, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(10, 10, 10)
-                                .addComponent(jTextFieldApelidos, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(jTextFieldContacto, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addGap(60, 60, 60))
         );
 
-        jPanelInfoOblgLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jTextFieldApelidos, jTextFieldDNI, jTextFieldNombre});
+        jPanelInfoOblgLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jTextFieldCIF, jTextFieldContacto, jTextFieldNombre});
 
         jPanelInfoOblgLayout.setVerticalGroup(
             jPanelInfoOblgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -87,17 +119,21 @@ public class FormularioEmpresas extends javax.swing.JDialog {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanelInfoOblgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelContacto)
-                    .addComponent(jTextFieldApelidos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextFieldContacto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanelInfoOblgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelCIF)
-                    .addComponent(jTextFieldDNI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(104, Short.MAX_VALUE))
+                    .addComponent(jTextFieldCIF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(validationPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(226, Short.MAX_VALUE))
         );
+
+        getContentPane().add(jPanelInfoOblg);
 
         jLabelTlf.setText("Tlf");
 
-        jLabelCurso.setText("Direccion");
+        jLabelDireccion.setText("Direccion");
 
         javax.swing.GroupLayout jPanelInfoSecLayout = new javax.swing.GroupLayout(jPanelInfoSec);
         jPanelInfoSec.setLayout(jPanelInfoSecLayout);
@@ -111,10 +147,10 @@ public class FormularioEmpresas extends javax.swing.JDialog {
                         .addGap(18, 18, 18)
                         .addComponent(jTextFieldTlf, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanelInfoSecLayout.createSequentialGroup()
-                        .addComponent(jLabelCurso, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabelDireccion, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jTextFieldCurso, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(24, Short.MAX_VALUE))
+                        .addComponent(jTextFieldDireccion, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(85, Short.MAX_VALUE))
         );
         jPanelInfoSecLayout.setVerticalGroup(
             jPanelInfoSecLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -125,48 +161,46 @@ public class FormularioEmpresas extends javax.swing.JDialog {
                     .addComponent(jTextFieldTlf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanelInfoSecLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabelCurso)
-                    .addComponent(jTextFieldCurso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(45, Short.MAX_VALUE))
+                    .addComponent(jLabelDireccion)
+                    .addComponent(jTextFieldDireccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(309, Short.MAX_VALUE))
         );
 
-        jButtonAcepptar.setText("Aceptar");
+        getContentPane().add(jPanelInfoSec);
+
+        jButtonAceptar.setText("Aceptar");
+        jButtonAceptar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonAceptarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonAceptar);
 
         jButtonCancelar.setText("Cancelar");
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(58, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButtonCancelar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButtonAcepptar))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jPanelInfoOblg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(57, 57, 57)
-                        .addComponent(jPanelInfoSec, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(93, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanelInfoOblg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanelInfoSec, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 73, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButtonAcepptar)
-                    .addComponent(jButtonCancelar))
-                .addGap(43, 43, 43))
-        );
+        jButtonCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonCancelarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonCancelar);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButtonAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAceptarActionPerformed
+        String nombre = jTextFieldNombre.getText();
+        String contacto = jTextFieldContacto.getText();
+        String cif = jTextFieldCIF.getText();
+        String tlf = jTextFieldTlf.getText();
+        String direccion = jTextFieldDireccion.getText();
+        Empresa empresa = new Empresa(nombre,contacto, cif, tlf, direccion);
+        ListaEmpresas.aniadirEmpresa(empresa);
+        dispose();
+    }//GEN-LAST:event_jButtonAceptarActionPerformed
+
+    private void jButtonCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarActionPerformed
+        dispose();
+    }//GEN-LAST:event_jButtonCancelarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -174,19 +208,20 @@ public class FormularioEmpresas extends javax.swing.JDialog {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtonAcepptar;
+    private javax.swing.JButton jButtonAceptar;
     private javax.swing.JButton jButtonCancelar;
     private javax.swing.JLabel jLabelCIF;
     private javax.swing.JLabel jLabelContacto;
-    private javax.swing.JLabel jLabelCurso;
+    private javax.swing.JLabel jLabelDireccion;
     private javax.swing.JLabel jLabelNombre;
     private javax.swing.JLabel jLabelTlf;
     private javax.swing.JPanel jPanelInfoOblg;
     private javax.swing.JPanel jPanelInfoSec;
-    private javax.swing.JTextField jTextFieldApelidos;
-    private javax.swing.JTextField jTextFieldCurso;
-    private javax.swing.JTextField jTextFieldDNI;
+    private javax.swing.JTextField jTextFieldCIF;
+    private javax.swing.JTextField jTextFieldContacto;
+    private javax.swing.JTextField jTextFieldDireccion;
     private javax.swing.JTextField jTextFieldNombre;
     private javax.swing.JTextField jTextFieldTlf;
+    private org.netbeans.validation.api.ui.swing.ValidationPanel validationPanel;
     // End of variables declaration//GEN-END:variables
 }

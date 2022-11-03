@@ -4,6 +4,8 @@
  */
 package gui;
 
+import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -18,8 +20,9 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     
     public PantallaPrincipal() {
         initComponents();
+        this.setIconImage(new ImageIcon(getClass().getResource("/gui/Images/icono.png")).getImage());
     }
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -36,6 +39,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         jPasswordFieldContrasena = new javax.swing.JPasswordField();
         jButtonCancelar = new javax.swing.JButton();
         jButtonAceptar = new javax.swing.JButton();
+        jLabelImagen = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -73,72 +77,107 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         jPanelInicioSesionLayout.setHorizontalGroup(
             jPanelInicioSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelInicioSesionLayout.createSequentialGroup()
-                .addGap(90, 90, 90)
-                .addGroup(jPanelInicioSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addGroup(jPanelInicioSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanelInicioSesionLayout.createSequentialGroup()
-                            .addComponent(jLabelContrasena)
-                            .addGap(18, 18, 18)
-                            .addComponent(jPasswordFieldContrasena, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanelInicioSesionLayout.createSequentialGroup()
-                            .addComponent(JLabelUsuario)
-                            .addGap(38, 38, 38)
-                            .addComponent(jTextFieldUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(40, 40, 40)
+                .addGroup(jPanelInicioSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanelInicioSesionLayout.createSequentialGroup()
                         .addComponent(jButtonCancelar)
-                        .addGap(40, 40, 40)
-                        .addComponent(jButtonAceptar)))
-                .addGap(90, 90, 90))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButtonAceptar))
+                    .addGroup(jPanelInicioSesionLayout.createSequentialGroup()
+                        .addComponent(jLabelContrasena)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
+                        .addComponent(jPasswordFieldContrasena, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanelInicioSesionLayout.createSequentialGroup()
+                        .addComponent(JLabelUsuario)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jTextFieldUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(40, 40, 40))
         );
         jPanelInicioSesionLayout.setVerticalGroup(
             jPanelInicioSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelInicioSesionLayout.createSequentialGroup()
-                .addGap(20, 20, 20)
+                .addGap(51, 51, 51)
                 .addGroup(jPanelInicioSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(JLabelUsuario)
                     .addComponent(jTextFieldUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanelInicioSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelContrasena)
                     .addComponent(jPasswordFieldContrasena, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanelInicioSesionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonCancelar)
                     .addComponent(jButtonAceptar))
-                .addGap(30, 30, 30))
+                .addGap(23, 23, 23))
         );
+
+        jLabelImagen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gui/Images/LogoIesLuisBraille.jpg"))); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(90, Short.MAX_VALUE)
+                .addContainerGap(110, Short.MAX_VALUE)
+                .addComponent(jLabelImagen, javax.swing.GroupLayout.PREFERRED_SIZE, 753, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(137, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanelInicioSesion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(90, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(90, Short.MAX_VALUE)
+                .addGap(20, 20, 20)
+                .addComponent(jLabelImagen, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(51, 51, 51)
                 .addComponent(jPanelInicioSesion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(88, Short.MAX_VALUE))
+                .addContainerGap(340, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    
+    private boolean validarUsuario(){
+        String usuario = jTextFieldUsuario.getText();
+        char[] contrasenaChar = jPasswordFieldContrasena.getPassword();
+        String contrasena = new String(contrasenaChar);
+        if (comprobacionUsuarios(usuario, contrasena) == false)  {
+            JOptionPane.showMessageDialog(this, "Los campos Usuario y Contraseña no coinciden", "ERROR", JOptionPane.ERROR_MESSAGE);
+            return false;
+        }
+        // En caso de que ninguna de las condiciones se de devolvemos un true.
+        return true;
+    }
+    
+    private boolean comprobacionUsuarios(String usuario, String contrasena){
+        String[] listaUsuarios = new String[]{"Pablo", "Alfredo", "Manolo"};
+        String[] listaContrasenas = new String[]{"1234", "4321", "0987"};
+        
+        for (int i = 0; i< listaUsuarios.length; i++ ){
+            // Si es un String hay que poner .equals que si no, no funciona.
+            if ((listaUsuarios[i].equals(usuario)) && (listaContrasenas[i].equals(contrasena))){
+                return true;
+            }
+        }
+        return false;
+    }
+    
     private void jTextFieldUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldUsuarioActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldUsuarioActionPerformed
 
     private void jButtonCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarActionPerformed
-        setVisible(false);
+        dispose();
     }//GEN-LAST:event_jButtonCancelarActionPerformed
 
     private void jButtonAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAceptarActionPerformed
-        MenuPrincipal menu  = new MenuPrincipal(this , true);
+        if(validarUsuario()){
+            JOptionPane.showMessageDialog(this, "El nombre y la edad se validaron correctamente");
+            MenuPrincipal menu  = new MenuPrincipal(this , true);
         menu.setVisible(true);
+        }
     }//GEN-LAST:event_jButtonAceptarActionPerformed
 
     private void jButtonAceptarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonAceptarMouseClicked
@@ -185,6 +224,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton jButtonAceptar;
     private javax.swing.JButton jButtonCancelar;
     private javax.swing.JLabel jLabelContrasena;
+    private javax.swing.JLabel jLabelImagen;
     private javax.swing.JPanel jPanelInicioSesion;
     private javax.swing.JPasswordField jPasswordFieldContrasena;
     private javax.swing.JTextField jTextFieldUsuario;

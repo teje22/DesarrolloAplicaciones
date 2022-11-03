@@ -35,8 +35,8 @@ public class ListaAlumnos {
         return listaAlumnos;
     }
 
-    public void setListaAlumnos(List<Alumno> listaUsuarios) {
-        this.listaAlumnos = listaUsuarios;
+    public void setListaAlumnos(List<Alumno> listaAlumnos) {
+        this.listaAlumnos = listaAlumnos;
     }
     
     public static void aniadirAlumno(Alumno alumno) {

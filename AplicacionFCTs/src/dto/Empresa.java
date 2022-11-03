@@ -12,10 +12,10 @@ public class Empresa {
     private String nombre;
     private String contacto;
     private String cif;
-    private int numero_tlf;
+    private String numero_tlf;
     private String direccion;
 
-    public Empresa(String nombre, String contacto, String cif, int numero_tlf, String direccion) {
+    public Empresa(String nombre, String contacto, String cif, String numero_tlf, String direccion) {
         this.nombre = nombre;
         this.contacto = contacto;
         this.cif = cif;
@@ -47,11 +47,11 @@ public class Empresa {
         this.cif = cif;
     }
 
-    public long getNumero_tlf() {
+    public String getNumero_tlf() {
         return numero_tlf;
     }
 
-    public void setNumero_tlf(int numero_tlf) {
+    public void setNumero_tlf(String numero_tlf) {
         this.numero_tlf = numero_tlf;
     }
 
@@ -63,7 +63,15 @@ public class Empresa {
         this.direccion = direccion;
     }
     
-    
+    public String[] toArrayString(){
+        String[] s = new String[5];
+        s[0] = nombre;
+        s[1] = contacto;
+        s[2] = cif;
+        s[3] = numero_tlf;
+        s[4] = direccion;
+        return s;
+    }
     
     
 }
